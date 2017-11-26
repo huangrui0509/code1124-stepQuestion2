@@ -1,18 +1,19 @@
 import java.util.function.Supplier;
 
 /**
- * Created by qiuzhanghua on 2017/2/7.
+ * 台阶问题的实现
  */
 public class FibonacciSupplier implements Supplier<Long> {
-  private long previous = 1;
-  private long current = 2;
+  private long a = 0;
+  private long b = 0;
+  private long c = 1;
 
   @Override
   public Long get() {
-    long p = previous;
-    long next = current + previous;
-    previous = current;
-    current = next;
-    return p;
+	  long s=a+b+c;
+		a=b;
+		b=c;
+		c=s;
+		return s;
   }
 }
